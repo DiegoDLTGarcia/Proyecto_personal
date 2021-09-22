@@ -13,14 +13,18 @@
         }else{
             require "conexion.php";
             $user = mysqli_real_escape_string($conection,$_POST['usuario']);
-            $pass= md5(mysqli_real_escape_string($conection,$_POST['clave']));
+            //$pass= md5(mysqli_real_escape_string($conection,$_POST['clave']));
+            $pass= mysqli_real_escape_string($conection,$_POST['clave']);
 
-            $query=mysqli_query($conection,"SELECT u.idusuario,u.nombre,u.correo,u.usuario,r.idrol,r.rol 
+            $query=mysqli_query($conection,"SELECT u.idusuario,u.usuario,r.idrol,r.rol,e.Nombre,e.Apepaterno,e.Apematerno
             FROM 
-            usuario u 
-            INNER JOIN rol r
-            ON u.rol=r.idrol
-            WHERE u.correo='$user' AND u.clave='$pass'");
+            usuarios u 
+            INNER JOIN roles r
+            ON u.idrol=r.idrol
+            INNER JOIN empleados e
+            ON u.idempleado=e.idempleado
+            WHERE u.usuario='$user' AND u.clave='$pass'");
+            print_r($query);
             mysqli_close($conection);
             $result=mysqli_num_rows($query);
             if($result>0){
@@ -28,8 +32,7 @@
                 session_start();
                 $_SESSION['activate']= true;
                 $_SESSION['idUser']=$data['idusuario'];
-                $_SESSION['nombre']=$data['nombre'];
-                $_SESSION['email']=$data['correo'];
+                $_SESSION['nombre']=$data['Nombre'];
                 $_SESSION['user']=$data['usuario'];
                 $_SESSION['rol']=$data['idrol'];
                 $_SESSION['rol_name']=$data['rol'];

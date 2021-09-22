@@ -2,7 +2,7 @@
 $host='localhost';
 $user='root';
 $password='root';
-$db='ventas_cbs_mexico';
+$db='proyecto_personal';
 
 $conection= @mysqli_connect($host,$user,$password,$db);
 //mysqli_close($conection);
