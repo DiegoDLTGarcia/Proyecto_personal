@@ -29,13 +29,16 @@
             $result=mysqli_num_rows($query);
             if($result>0){
                 $data= mysqli_fetch_array($query);
+                print_r($data);
                 session_start();
                 $_SESSION['activate']= true;
                 $_SESSION['idUser']=$data['idusuario'];
-                $_SESSION['nombre']=$data['Nombre'];
                 $_SESSION['user']=$data['usuario'];
-                $_SESSION['rol']=$data['idrol'];
-                $_SESSION['rol_name']=$data['rol'];
+                $_SESSION['idrol']=$data['idrol'];
+                $_SESSION['rola']=$data['rol'];
+                $_SESSION['name']=$data['usuario'];
+                $_SESSION['apep']=$data['Apepaterno'];
+                $_SESSION['apem']=$data['Apematerno'];
                 header('location: sistema/');
             }else{
                 $alert='El usuario o la clave son erroneas';

@@ -9,7 +9,7 @@
 <header>
     <div class="header">
 
-        <h1><img src="img/logo-cbs-mexico.png" width="200" height="100"></h1>
+        <h1><img src="#" width="200" height="100"></h1>
         <div class="optionsBar">
             <p>Mexico, <?php echo fechaC();?></p>
             <span>|</span>

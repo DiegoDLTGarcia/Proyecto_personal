@@ -28,13 +28,13 @@
     <section id="container">
         <div class="divContainer">
             <div>
-                <h1 class="titlePanelControl">Bienvenido, <?php echo $_SESSION['nombre'] ?></h1>
+                <h1 class="titlePanelControl">Bienvenido, <?php echo $_SESSION['name'].' '.$_SESSION['apep'].' '.$_SESSION['apem'];?></h1>
                
             </div>
             
     </section>
     <center>
-    <img src="img/cbs-gto.png" width="600" height="500"></center>
+    <img src="#" width="600" height="500"></center>
     <?php include "includes/footer.php";?>
 </body>
 
