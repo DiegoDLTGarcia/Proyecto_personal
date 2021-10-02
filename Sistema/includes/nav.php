@@ -2,21 +2,21 @@
     <ul>
         <li><a href="index.php"><i class="fas fa-home"></i> Inicio</a></li>
         <?php
-					if($_SESSION['rol']==1){
+					if($_SESSION['idrol']==1){
 					?>
         <li class="principal">
 
-            <a href="#"><i class="fas fa-users"></i> Usuarios</a>
+            <a href="#"><i class="fas fa-users"></i> Proveedores</a>
             <ul>
-                <li><a href="registro_usuario.php"><i class="fas fa-plus"></i> Nuevo Usuario</a></li>
-                <li><a href="lista_usuarios.php"><i class="fas fa-bars"></i> Lista de Usuarios</a></li>
+                
+                <li><a href="lista_proveedores.php"><i class="fas fa-bars"></i> Lista de Usuarios</a></li>
             </ul>
         </li>
         <?php
 				}
 				?>
         <?php
-					if($_SESSION['rol']==1 or $_SESSION['rol']==2){
+					if($_SESSION['idrol']==1 or $_SESSION['idrol']==2){
 					?>
         <li class="principal">
             <a href="#"><i class="fas fa-user-friends"></i> Clientes</a>
@@ -29,7 +29,7 @@
 				}
 				?>
         <?php
-					if($_SESSION['rol']==1){
+					if($_SESSION['idrol']==1){
 					?>
         <li class="principal">
             <a href="#"><i class="fas fa-user-tie"></i> Proveedores</a>
@@ -42,12 +42,12 @@
 				}
 				?>
         <?php
-					if($_SESSION['rol']==1 or $_SESSION['rol']==2 or $_SESSION['rol']==3){
+					if($_SESSION['idrol']==1 or $_SESSION['idrol']==2 or $_SESSION['idrol']==3){
 					?>
         <li class="principal">
             <a href="#"><i class="fas fa-boxes"></i> Productos</a>
             <ul>
-                <?php if($_SESSION['rol']==1 or $_SESSION['rol']==3){
+                <?php if($_SESSION['idrol']==1 or $_SESSION['idrol']==3){
 							?>
                 <li><a href="regitrar_prodcuto.php"><i class="fas fa-plus"></i> Nuevo Producto</a></li>
                 <?php
@@ -60,13 +60,13 @@
 				}
 				?>
         <?php
-					if($_SESSION['rol']==1 or $_SESSION['rol']==2 or $_SESSION['rol']==3){
+					if($_SESSION['idrol']==1 or $_SESSION['idrol']==2 or $_SESSION['idrol']==3){
 					?>
         <li class="principal">
             <a href="#"><i class="fas fa-file-invoice"></i></i> Cotización</a>
             <ul>
                 <?php
-					if($_SESSION['rol']==1 or $_SESSION['rol']==2){
+					if($_SESSION['rol']==1 or $_SESSION['idrol']==2){
 
 					
 					?>
@@ -74,7 +74,7 @@
                 <?php
 					}
                     ?>
-                <?php if($_SESSION['rol']==3){
+                <?php if($_SESSION['idrol']==3){
                         ?>
 
                 <li><a href="lista_ventas_administacion.php"><i class="fas fa-file-invoice-dollar"></i> Cotizaciónes</a></li>
@@ -82,7 +82,7 @@
                     }else{
                 ?>
                 <?php
-					if($_SESSION['rol']==1){
+					if($_SESSION['idrol']==1){
                         ?>
                 <li><a href="ventas.php"><i class="fas fa-file-invoice-dollar"></i> Cotización Totales</a></li>
                 <li><a href="lista_ventas_vendedores.php"><i class="fas fa-file-invoice-dollar"></i> Cotización de <?php $usuario_activo=$_SESSION['nombre']; echo $usuario_activo;?></a></li>
@@ -101,7 +101,7 @@
 				}
 				?>
         <?php
-					if($_SESSION['rol']==1 or $_SESSION['rol']==2){
+					if($_SESSION['idrol']==1 or $_SESSION['idrol']==2){
 					?>
 
         <li class="principal">
